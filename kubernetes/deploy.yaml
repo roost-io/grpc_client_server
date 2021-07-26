@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: server:latest
+        image: roost-utility:5002/server:latest
         env:
         - name: SERVICE_ADDRESS
           value: zbio-service.zbio:50002
@@ -55,5 +55,3 @@ spec:
         env:
         - name: SERVICE_ADDRESS
           value: zbio-service.zbio:50002
-        # Since we push image to `minikube docker-env` we want it to pull locally and not from dokcer hub. 
-        imagePullPolicy: Never
