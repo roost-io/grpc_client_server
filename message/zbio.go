@@ -11,7 +11,7 @@ const (
 	// TopicName to be created in zbio
 	TopicName string = "grpc-healthcheck-example"
 	// ZBIOEnabled specifies whether zbio messaging is enabled
-	zbioEnabled bool = true
+	zbioEnabled bool = false
 )
 
 var (
@@ -54,6 +54,9 @@ func InitZBIO(cfg zb.Config) {
 
 // SendMessageToZBIO sends message to zbio
 func SendMessageToZBIO(messages []zb.Message) {
+	if !zbioEnabled {
+		return
+	}
 	// send messages only if topic exists zbClient.DescribeTopics([]string{topicName})
 	var topicFound = true
 	if topicFound {

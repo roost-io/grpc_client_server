@@ -35,7 +35,6 @@ spec:
         env:
         - name: SERVICE_ADDRESS
           value: zbio-service.zbio:50002
-        imagePullPolicy: Never
         ports:
         - containerPort: 3000
         livenessProbe:
